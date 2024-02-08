@@ -16,12 +16,13 @@ def get_char_dict(string):
     chars = {}
     string = ''.join(string.split())    
     for s in string:
-        s = s.lower()
-        if s in chars:
-            num = chars.get(s)
-            chars[s] = num + 1
-        else:
-            chars.update({s: 1})
+        if s.isalpha():
+            s = s.lower()
+            if s in chars:
+                num = chars.get(s)
+                chars[s] = num + 1
+            else:
+                chars.update({s: 1})
     return chars
 
 def make_dict_list(dict):
